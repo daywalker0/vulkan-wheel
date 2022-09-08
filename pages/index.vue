@@ -3,6 +3,7 @@
 		<div class="wheel-page__container">
 			<Logo />
 			<Wheel />
+			<Popup />
 		</div>
 	</section>
 </template>

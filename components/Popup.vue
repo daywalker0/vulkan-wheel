@@ -15,12 +15,12 @@
 
 <script>
 export default {
-
 }
 </script>
 
 <style lang="scss" scoped>
 .popup {
+	display: none;
 	z-index: 101;
 	background: #fff;
 	width: 350px;
