@@ -11,23 +11,35 @@
 <script>
 export default {
 methods: {
-		async rotateWheel() {
+		rotateWheel() {
 			const btn = document.querySelector('.wheel__btn');
 			const spinner = document.querySelector('.wheel__img');
 			const popup = document.querySelector('.popup');
+			const pointer = document.querySelector('.pointer');
 			btn.addEventListener('click', spinner.classList.add('rotate'))
+			setTimeout(() => {
+				popup.classList.add('open')
+			}, 5000);
 		}
 	}
 }
 </script>
 
 <style lang="scss">
-@media (max-width: 768px) {
-	.wheel {
+
+.wheel {
 		position: relative;
 		bottom: 40px;
 		left: 0;
-		&__wrap {
+	&__img {
+		max-width: 900px;
+		animation-name: spinner;
+		animation-duration: 5s;
+		animation-iteration-count: infinite;
+		animation-timing-function: ease-in;
+		animation-fill-mode: forwards;
+	}
+	&__wrap {
 			position: relative;
 		}
 		&__img {
@@ -40,7 +52,7 @@ methods: {
 			top: 43%;
 		}
 		&__btn-block {
-			background: url('@/assets/images/ball2.png');
+			background: url('@/assets/images/ball3.png');
 			background-size: cover;
 			width: 64px;
 			height: 64px;
@@ -61,8 +73,30 @@ methods: {
 			border: none;
 			cursor: pointer;
 		}
+	@keyframes spinner {
+		0% {
+				transform:rotate(0deg);
+		}
+		18% {
+				transform:rotate(5deg);
+		}
+		36% {
+				transform:rotate(0deg);
+		}
+		44% {
+				transform:rotate(5deg);
+		}
+		62% {
+				transform:rotate(0deg);
+		}
+		80% {
+				transform:rotate(5deg);
+		}
+		100% {
+				transform:rotate(0deg);
+		}
 	}
-	.rotate {
+		.rotate {
 		animation-name: rotation;
     animation-duration: 5s;
     animation-iteration-count: 1;
@@ -78,6 +112,34 @@ methods: {
     }
 		100% {
 				transform:rotate(1040deg);
+		}
+	}
+	.open {
+		display: block;
+	}
+}
+@media (max-width: 768px) {
+	.wheel {
+		&__img {
+			max-width: 540px;
+		}
+	}
+}
+@media (max-width: 374px) {
+	.wheel {
+		&__img {
+			max-width: 468px;
+		}
+		&__pointer {
+			left: 41%;
+			top: 42%;
+		}
+		&__btn-block {
+			left: 43%;
+			top: 43%;
+		}
+		&__btn {
+			margin-top: 20px;
 		}
 	}
 }

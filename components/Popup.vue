@@ -23,7 +23,7 @@ export default {
 	display: none;
 	z-index: 101;
 	background: #fff;
-	width: 350px;
+	width: 355px;
 	text-align: center;
 	position: fixed;
 	top: 14%;
@@ -33,7 +33,7 @@ export default {
 	&__top-content {
 		padding-top: 30px;
 		border-radius: 7px;
-		background: blue;
+		background: #004875;
 		position: relative;
 		&::before {
 		content: "";
@@ -62,7 +62,7 @@ export default {
 	}
 	&__title {
 		font-size: 35px;
-		color: yellow;
+		color: #ffd500;
 		padding-bottom: 20px;
 	}
 	&__main-content {
@@ -74,25 +74,34 @@ export default {
 		}
 	}
 	&__winners {
-		font-size: 25px;
+		font-size: 30px;
 		font-weight: 800;
 		padding: 15px;
-		color: red;
+		color: #c20000;
 		text-transform: uppercase;
 	}
 	&__btn {
 		color: #fff;
-		background: rgb(53,167,110);
+		background: #00b300;
 		text-transform: uppercase;
-		padding: 25px 33px;
+		padding: 22px 33px;
 		font-size: 30px;
 		border-radius: 5px;
 		outline: none;
 		border: none;
-		box-shadow: 0 -6px green inset;
+		box-shadow: 0 -6px #008000 inset;
 		display: block;
 		margin: 0 auto;
 		font-weight: 700;
+	}
+}
+.open {
+	display: block;
+}
+
+@media (max-width: 374px) {
+	.popup {
+		width: 310px;
 	}
 }
 </style>
